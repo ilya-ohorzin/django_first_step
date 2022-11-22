@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ title_h1 }}</h1>
+        <p>20 Привет, как дела?</p>
+        <buttom class="btn btn-warning">GO on page about</buttom>
+
+        {% for i in values %}
+            {% if i == 'black' %}
+                <p>{{ i|lower }}</p>
+            {% else %}
+                <p>{{ i|upper }}</p>
+            {% endif %}
+        {% endfor %}
+
+        <br>
+            {% filter upper %}
+                {% for el in auto %}
+                    <p>{{ el }}</p>
+                {% endfor %}
+            {% endfilter %}
+    </div>
+
+
+{% endblock %}
+
+
